@@ -1,33 +1,27 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+public class reversestring {
+    public static void main(String[] args) {
 
-class TestClass {
-    public static void main(String args[] ) throws Exception {
-        Scanner s = new Scanner(System.in);
+        String str = "java ja java jaaaa";
 
 
-            String str = s.nextLine();
-            Scanner s1 = new Scanner(str);
-            List<Integer> spaces = new ArrayList<Integer>();
-            int wc = 0;
-            int last = 0;
-            StringBuilder sb = new StringBuilder();
-            while(s1.hasNext()){
-                String _str = s1.next();
-                if(s1.hasNext()){
-                    last += _str.length() + wc;
-                    wc = (wc == 0) ? wc+1 : wc;
-                    spaces.add(last);
-                }
-                sb.append(_str);
-            }
-            sb.reverse();
-            for(int i:spaces){
-                sb.insert(i, " ");
-            }
-            System.out.println(sb.toString());
+        //check the length of the intial string
+        int len = str.length();
 
+        // create character array "arr" and split up the string into a total array size "len"
+        char arr[] = str.toCharArray();
+
+        // have two pointers from each direction of array, i starting from 0 and j starting at len - 1
+        //
+        for (int i = 0, j = len - 1; i <= j; i++, j--) {
+            if (arr[i] == ' ') i++;
+            if (arr[j] == ' ') j--;
+
+            char tmp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = tmp;
+
+        }
+        System.out.println(arr);
     }
-}
 
+}
