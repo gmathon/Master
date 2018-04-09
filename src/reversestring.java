@@ -1,27 +1,28 @@
 public class reversestring {
     public static void main(String[] args) {
 
-        String str = "java ja java jaaaa";
+        String in = "java ja java jaaaa";
 
 
         //check the length of the intial string
-        int len = str.length();
+        int l = in.length();
 
-        // create character array "arr" and split up the string into a total array size "len"
-        char arr[] = str.toCharArray();
+        // create character array "arr" and split up the string into a total array size "l"
+        char ans[] = in.toCharArray();
 
-        // have two pointers from each direction of array, i starting from 0 and j starting at len - 1
-        //
-        for (int i = 0, j = len - 1; i <= j; i++, j--) {
-            if (arr[i] == ' ') i++;
-            if (arr[j] == ' ') j--;
+        // have two pointers from each direction of array, i starting from 0 and j starting at L- 1
+        // the points will move towards reach other until they overlap and loop will end
+        for (int i = 0, j = l - 1; i <= j; i++, j--) {
+        //i and j will check if it contains a space and if it does, it will move to next position
+            if (ans[i] == ' ') i++;
+            if (ans[j] == ' ') j--;
 
-            char tmp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = tmp;
+            char end = ans[i];
+            ans[i] = ans[j];
+            ans[j] = end;
 
         }
-        System.out.println(arr);
+        System.out.println(ans);
     }
 
 }
