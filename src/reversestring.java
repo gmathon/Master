@@ -3,7 +3,7 @@ public class reversestring {
 
 
 //        comment and uncomment test cases
-        
+
 //      String in = "I Am Not String";
 //      String in = "JAVA JSP ANDROID";
         String in = "1 22 333 4444 55555";
