@@ -18,7 +18,7 @@ public class arraysum {
 
             //add number at index i and j
             s = array[i] + array[j];
-            
+
             //if numbers equal the number required then print out
             if (s == sum) {
                 System.out.println(array[i] + " plus " + array[j] + " = " + sum);
