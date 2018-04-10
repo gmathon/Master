@@ -15,7 +15,11 @@ public class arraysum {
 
         // 2 pointers on sorted array i starting from left and j starting from right until i<j
         for (i = 0, j = len - 1; i < j; ) {
+
+            //add number at index i and j
             s = array[i] + array[j];
+            
+            //if numbers equal the number required then print out
             if (s == sum) {
                 System.out.println(array[i] + " plus " + array[j] + " = " + sum);
 
